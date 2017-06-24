@@ -1,15 +1,18 @@
 function appendButton(id, width, height, x, y, fill, stroke, activeFill,
-	text, textFill, activeTextFill, font) {
+	text, textFill, activeTextFill, font, fontSize, link) {
 
 	buttonGroup = d3.select(id).append("g");
 
-	buttonGroup.append("rect")
+	buttonGroup.append("a")
+	.attr("xlink:href", link)
+	.append("rect")
 	.attr("width", width)
 	.attr("height", height)
 	.attr("x", x)
 	.attr("y", y)
 	.style("fill", fill)
 	.style("stroke", stroke)
+	.style("cursor", "pointer")
 	.on("mouseover", function () {
 		d3.select(this).transition()
 		.style("fill", activeFill);
@@ -27,6 +30,7 @@ function appendButton(id, width, height, x, y, fill, stroke, activeFill,
 	.style("alignment-baseline", "middle")
 	.style("fill", textFill)
 	.style("font-family", font)
+	.style("font-size", fontSize)
 	.text(text)
 	.on("mouseover", function () {
 		d3.select(this).transition()
