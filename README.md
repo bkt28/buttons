@@ -6,6 +6,7 @@ Library for adding interactive FiveThirtyEight-style buttons using D3.js
 
 ```html
 <script>
-appendButton(id, width, height, x, y, fill, stroke, activeFill, text, textFill, activeTextFill, font, fontSize, link)
+appendButton(id, width, height, x, y, fill, stroke, activeFill,
+	text, textFill, activeTextFill, font, fontSize, link)
 </script>
 ```
